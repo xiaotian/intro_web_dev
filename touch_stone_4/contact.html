@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Contact | North Star Bakery</title>
+</head>
+<body>
+  <header>
+    <img src="images/bakery-logo_c.png" alt="North Star Bakery" width="180">
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1>Contact North Star Bakery</h1>
+    <h2>Inquiry and pre order request</h2>
+    <p>Ask about our breads and cookies or request a pre order for Kirkland pickup.</p>
+    <p>Demo only: requests are not sent.</p>
+    <form action="contact.html" method="get">
+      <fieldset>
+        <legend>Your inquiry or pre order</legend>
+        <p>
+          <label for="name">Name (required)</label><br>
+          <input type="text" id="name" name="name" required minlength="2">
+        </p>
+        <p>
+          <label for="email">Email (required)</label><br>
+          <input type="email" id="email" name="email" required>
+        </p>
+        <p>
+          <label for="pickup-date">Pickup date (optional for general questions)</label><br>
+          <input type="date" id="pickup-date" name="pickup_date">
+        </p>
+        <p>
+          <label for="request-type">Request type (required)</label><br>
+          <select id="request-type" name="request_type" required>
+            <option value="">Choose one</option>
+            <option value="pre-order">Pre order</option>
+            <option value="general-question">General question</option>
+          </select>
+        </p>
+        <p>
+          <label for="item-details">Item details (required)</label><br>
+          <textarea id="item-details" name="item_details" rows="4" required minlength="10"></textarea>
+        </p>
+        <p>
+          <label for="allergy-notes">Allergy notes (if applicable)</label><br>
+          <textarea id="allergy-notes" name="allergy_notes" rows="2"></textarea>
+        </p>
+        <button type="submit">Check demo request</button>
+      </fieldset>
+    </form>
+    <h2>Location</h2>
+    <p>Kirkland, WA. Street address to be confirmed.</p>
+    <h2>Hours of operation</h2>
+    <p>Sample hours: Tue-Fri 7 a.m.-6 p.m.; Sat-Sun 8 a.m.-3 p.m.; closed Mon.</p>
+  </main>
+  <footer>
+    <p>North Star Bakery | Kirkland, WA</p>
+  </footer>
+</body>
+</html>
