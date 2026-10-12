@@ -7,6 +7,7 @@ body {
 	background-color: #f7f1e8;
 	color: #483025;
 	font-family: Arial, sans-serif;
+	line-height: 1.6;
 }
 
 a {
@@ -51,13 +52,14 @@ main,
 footer {
 	max-width: 960px;
 	margin: 0 auto;
-	padding: 1.5rem;
+	padding: 1rem;
 }
 
+/* Start with a stacked header for mobile screens. */
 header {
 	display: flex;
-	align-items: center;
-	justify-content: space-between;
+	flex-direction: column;
+	align-items: flex-start;
 	gap: 1.5rem;
 }
 
@@ -82,7 +84,7 @@ h2 {
 
 h1 {
 	margin: 0 0 1rem;
-	font-size: 2.5rem;
+	font-size: 2rem;
 }
 
 h2 {
@@ -127,20 +129,21 @@ footer {
 	text-align: center;
 }
 
-/* On small screens, stack the header and reduce spacing and headings. */
-@media (max-width: 600px) {
+/* Add a horizontal header and more space on larger screens. */
+@media (min-width: 600px) {
 	header {
-		flex-direction: column;
-		align-items: flex-start;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
 	}
 
 	header,
 	main,
 	footer {
-		padding: 1rem;
+		padding: 1.5rem;
 	}
 
 	h1 {
-		font-size: 2rem;
+		font-size: 2.5rem;
 	}
 }
