@@ -2,7 +2,27 @@ const contactForm = document.querySelector("form");
 const pickupDate = document.querySelector("#pickup-date");
 const requestType = document.querySelector("#request-type");
 const fields = [...contactForm.querySelectorAll("input, select, textarea")];
+const draftKey = "north-star-contact-draft";
 let submitted = false;
+
+try {
+  const draft = JSON.parse(localStorage.getItem(draftKey) || "{}");
+  fields.forEach(field => {
+    if (draft && typeof draft[field.id] === "string") field.value = draft[field.id];
+  });
+} catch {
+  // Keep the form usable if storage is unavailable or the draft is unreadable.
+}
+
+function saveDraft() {
+  const draft = {};
+  fields.forEach(field => { draft[field.id] = field.value; });
+  try {
+    localStorage.setItem(draftKey, JSON.stringify(draft));
+  } catch {
+    // Validation still works when the browser cannot save the draft.
+  }
+}
 
 // JavaScript shows all errors together; HTML validation remains a fallback.
 contactForm.noValidate = true;
@@ -74,12 +94,14 @@ function updatePickupRequired() {
 
 fields.forEach(field => {
   field.addEventListener("input", () => {
+    saveDraft();
     updatePickupRequired();
     if (submitted) {
       if (validators[field.id]) validators[field.id](field);
       if (field === requestType) validatePickupDate(pickupDate);
     }
   });
+  field.addEventListener("change", saveDraft);
 });
 requestType.addEventListener("change", () => {
   updatePickupRequired();
@@ -97,6 +119,18 @@ contactForm.addEventListener("submit", event => {
   const invalidFields = fields.filter(field => validators[field.id] && !validators[field.id](field));
   if (invalidFields.length) {
     event.preventDefault();
+    saveDraft();
     invalidFields[0].focus();
+  } else {
+    event.preventDefault();
+    try {
+      localStorage.removeItem(draftKey);
+    } catch {
+      // Allow confirmation even if storage is unavailable.
+    }
+    contactForm.reset();
+    submitted = false;
+    updatePickupRequired();
+    window.alert("Your request is received");
   }
 });
