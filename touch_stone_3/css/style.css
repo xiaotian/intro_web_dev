@@ -1,0 +1,146 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	background-color: #f7f1e8;
+	color: #483025;
+	font-family: Arial, sans-serif;
+}
+
+a {
+	color: #483025;
+}
+
+nav a:hover,
+nav a[aria-current="page"] {
+	background-color: #483025;
+	color: #ffffff;
+}
+
+main {
+	background-color: #ffffff;
+}
+
+fieldset {
+	min-width: 0;
+	margin: 0;
+	padding: 1rem;
+	border: 1px solid #483025;
+}
+
+input,
+select,
+textarea,
+button {
+	padding: 0.75rem;
+	border: 1px solid #483025;
+	background-color: #ffffff;
+	color: #483025;
+	font: inherit;
+}
+
+button {
+	background-color: #483025;
+	color: #ffffff;
+}
+
+header,
+main,
+footer {
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 1.5rem;
+}
+
+header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1.5rem;
+}
+
+nav ul {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+nav a {
+	display: block;
+	padding: 0.5rem 0.75rem;
+}
+
+h1,
+h2 {
+	line-height: 1.2;
+}
+
+h1 {
+	margin: 0 0 1rem;
+	font-size: 2.5rem;
+}
+
+h2 {
+	margin: 2rem 0 0.75rem;
+	font-size: 1.75rem;
+}
+
+p,
+main ul {
+	margin: 0 0 1rem;
+}
+
+img,
+audio {
+	max-width: 100%;
+}
+
+img {
+	display: block;
+	height: auto;
+}
+
+figure {
+	margin: 1rem 0;
+}
+
+form {
+	max-width: 640px;
+}
+
+input,
+select,
+textarea {
+	width: 100%;
+}
+
+textarea {
+	resize: vertical;
+}
+
+footer {
+	text-align: center;
+}
+
+/* On small screens, stack the header and reduce spacing and headings. */
+@media (max-width: 600px) {
+	header {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	header,
+	main,
+	footer {
+		padding: 1rem;
+	}
+
+	h1 {
+		font-size: 2rem;
+	}
+}
