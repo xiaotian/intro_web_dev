@@ -178,3 +178,14 @@ button:disabled {
 	padding: 0.25rem 0.5rem;
 	font-size: 0.875rem;
 }
+
+[aria-invalid="true"] {
+	border: 2px solid #a32424;
+	background-color: #fff5f5;
+}
+
+.field-error {
+	display: block;
+	color: #a32424;
+	font-size: 0.875rem;
+}
