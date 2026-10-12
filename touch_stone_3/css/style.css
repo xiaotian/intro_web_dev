@@ -118,6 +118,11 @@ figure {
 	margin: 1rem 0;
 }
 
+/* Keep product photos small; max-width still lets them fit mobile screens. */
+.product-image {
+	width: 640px;
+}
+
 form {
 	max-width: 640px;
 }
