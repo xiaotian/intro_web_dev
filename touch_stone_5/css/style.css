@@ -1,0 +1,191 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	background-color: #f7f1e8;
+	color: #483025;
+	font-family: Arial, sans-serif;
+	font-size: 1rem;
+	line-height: 1.6;
+}
+
+h1,
+h2 {
+  font-family: Georgia, serif;
+  line-height: 1.2;
+}
+
+a {
+	color: #483025;
+}
+
+nav a:hover,
+nav a[aria-current="page"] {
+	background-color: #483025;
+	color: #ffffff;
+}
+
+main {
+	background-color: #ffffff;
+}
+
+fieldset {
+	min-width: 0;
+	margin: 0;
+	padding: 1rem;
+	border: 1px solid #483025;
+}
+
+input,
+select,
+textarea,
+button {
+	padding: 0.75rem;
+	border: 1px solid #483025;
+	background-color: #ffffff;
+	color: #483025;
+	font: inherit;
+}
+
+button {
+	background-color: #483025;
+	color: #ffffff;
+}
+
+header,
+main,
+footer {
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 1rem;
+}
+
+/* Start with a stacked header for mobile screens. */
+header {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 1.5rem;
+}
+
+nav ul {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+nav a {
+	display: block;
+	padding: 0.5rem 0.75rem;
+}
+
+h1,
+h2 {
+	line-height: 1.2;
+}
+
+h1 {
+	margin: 0 0 1rem;
+	font-size: 2rem;
+}
+
+h2 {
+	margin: 2rem 0 0.75rem;
+	font-size: 1.75rem;
+}
+
+p,
+main ul {
+	margin: 0 0 1rem;
+}
+
+img,
+audio {
+	max-width: 100%;
+}
+
+img {
+	display: block;
+	height: auto;
+}
+
+figure {
+	margin: 1rem 0;
+}
+
+/* Keep product photos small; max-width still lets them fit mobile screens. */
+.product-image {
+	width: 640px;
+}
+
+form {
+	max-width: 640px;
+}
+
+input,
+select,
+textarea {
+	width: 100%;
+}
+
+textarea {
+	resize: vertical;
+}
+
+footer {
+	text-align: center;
+}
+
+/* Add a horizontal header and more space on larger screens. */
+@media (min-width: 600px) {
+	header {
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	header,
+	main,
+	footer {
+		padding: 1.5rem;
+	}
+
+	h1 {
+		font-size: 2.5rem;
+	}
+}
+
+button {
+	cursor: pointer;
+}
+
+button:disabled {
+	opacity: 0.65;
+	cursor: default;
+}
+
+#wishlist li {
+	margin-bottom: 0.75rem;
+}
+
+#wishlist button {
+	margin-left: 1rem;
+	padding: 0.25rem 0.5rem;
+	font-size: 0.875rem;
+}
+
+[aria-invalid="true"] {
+	border: 2px solid #a32424;
+	background-color: #fff5f5;
+}
+
+.field-error {
+	display: block;
+	color: #a32424;
+	font-size: 0.875rem;
+}
